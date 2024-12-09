@@ -40,7 +40,7 @@ public class UserRepository {
   }
 
   public int save(Usuario user){
-    String sql = "INSERT INTO usuarios (rot, nombre, correo, clave, usuario) VALUES (?,?,?,?,?)";
+    String sql = "INSERT INTO usuarios (rut, nombre, correo, clave, usuario) VALUES (?,?,?,?,?)";
     return jdbc.update(sql, user.getRut(), user.getNombre(), user.getCorreo(), user.getClave(), user.getUsuario());
   }
 

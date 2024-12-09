@@ -3,9 +3,11 @@ package com.pawpengaga.servicios;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.pawpengaga.modelo.Usuario;
 
+@Service
 public class UserService {
 
   @Autowired
@@ -19,16 +21,16 @@ public class UserService {
     return userRepo.findByRut(rut);
   }
 
-  public void createUser(Usuario user){
-    userRepo.save(user);
+  public int createUser(Usuario user){
+    return userRepo.save(user);
   }
 
-  public void updateUser(Usuario user){
-    userRepo.update(user);
+  public int updateUser(Usuario user){
+    return userRepo.update(user);
   }
 
-  public void deleteUser(String rut){
-    userRepo.deleteByRut(rut);
+  public int deleteUser(String rut){
+    return userRepo.deleteByRut(rut);
   }
 
 }

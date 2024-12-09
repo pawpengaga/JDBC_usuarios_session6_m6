@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.pawpengaga.modelo.Usuario;
 import com.pawpengaga.servicios.UserService;
 
-@SpringBootApplication
-public class JdbcUsuariosApplication implements CommandLineRunner {
+@SpringBootApplication	
+public class JdbcUsuariosApplication {
 
 	@Autowired
 	UserService userService;
@@ -18,10 +18,10 @@ public class JdbcUsuariosApplication implements CommandLineRunner {
 		SpringApplication.run(JdbcUsuariosApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		Usuario u = new Usuario("12", "Rhea", "rhea@mail.com", "1234", "awaken");
-		userService.createUser(u);
-	}
+	// @Override
+	// public void run(String... args) throws Exception {
+	// 	Usuario u = new Usuario("12", "Rhea", "rhea@mail.com", "1234", "awaken");
+	// 	userService.createUser(u);
+	// }
 
 }
