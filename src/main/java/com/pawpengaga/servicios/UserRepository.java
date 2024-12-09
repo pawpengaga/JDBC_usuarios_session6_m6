@@ -45,7 +45,8 @@ public class UserRepository {
   }
 
   public int update(Usuario user){
-    return jdbc.update("UPDATE usuarios SET nombre = ?, correo = ?, clave = ?, usuario = ? WHERE rut = ?", user.getNombre(), user.getCorreo(), user.getClave(), user.getUsuario(), user.getRut());
+    String sql = "UPDATE usuarios SET nombre = ?, correo = ?, clave = ?, usuario = ? WHERE rut = ?";
+    return jdbc.update(sql, user.getNombre(), user.getCorreo(), user.getClave(), user.getUsuario(), user.getRut());
   }
 
   public int deleteByRut(String rut){
