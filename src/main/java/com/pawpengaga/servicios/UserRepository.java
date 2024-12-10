@@ -40,8 +40,15 @@ public class UserRepository {
   }
 
   public int save(Usuario user){
+
+    Usuario userRepetido = findByRut(user.getRut());
+    if (userRepetido != null) {
+      return 0;
+    }
+
     String sql = "INSERT INTO usuarios (rut, nombre, correo, clave, usuario) VALUES (?,?,?,?,?)";
     return jdbc.update(sql, user.getRut(), user.getNombre(), user.getCorreo(), user.getClave(), user.getUsuario());
+
   }
 
   public int update(Usuario user){
@@ -52,6 +59,5 @@ public class UserRepository {
   public int deleteByRut(String rut){
     return jdbc.update("DELETE FROM usuarios WHERE rut = ?");
   }
-
 
 }

@@ -35,6 +35,9 @@ public class UserController {
       if (respuesta > 0) {
         tipo = "success";
         mensaje = "Registro agregado con éxito!";
+      } else if (respuesta == 0) {
+        tipo = "warning";
+        mensaje = "El usuario ya existe...";
       } else {
         tipo = "danger";
         mensaje = "Ha ocurrido un error";
